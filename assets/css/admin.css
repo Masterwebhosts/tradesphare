@@ -1,0 +1,115 @@
+﻿/* ====== Tradesphare Admin Panel Style ====== */
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== Admin Top Bar ====== */
+.admin-header {
+  background-color: #1e293b;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #38bdf8;
+}
+.admin-logo span {
+  color: #e2e8f0;
+  font-weight: normal;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+/* ====== Admin Table ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  color: #fff;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #334155;
+  color: #38bdf8;
+}
+
+td {
+  border-bottom: 1px solid #334155;
+}
+
+tr:hover {
+  background-color: #0f172a;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #1e293b;
+  color: #94a3b8;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}

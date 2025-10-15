@@ -1,0 +1,1 @@
+<?php  include('pages/contact.php'); include('includes/footer.php'); ?>

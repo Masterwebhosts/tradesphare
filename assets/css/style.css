@@ -1,0 +1,823 @@
+﻿/* ====== Tradesphare Main Website Style ====== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  color: #1e293b;
+}
+
+/* ====== Header ====== */
+header {
+  background-color: #1e293b;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+header h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #38bdf8;
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* ====== Main Layout ====== */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* ====== Footer ====== */
+footer {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* ====== DARK MODE ====== */
+body.dark {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark header {
+  background-color: #1e293b;
+}
+
+body.dark header h2 {
+  color: #38bdf8;
+}
+
+body.dark nav a {
+  color: #e2e8f0;
+}
+
+body.dark nav a:hover {
+  color: #38bdf8;
+}
+
+body.dark main {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark footer {
+  background-color: #1e293b;
+  color: #94a3b8;
+}
+
+/* ====== Theme Toggle Button ====== */
+.theme-btn {
+  background-color: transparent;
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+  color: #38bdf8;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.theme-btn:hover {
+  background-color: #38bdf8;
+  color: white;
+}
+
+/* ====== Hero Section (Parallax + Blur Effect) ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 20px;
+  color: white;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.hero::before {
+  /* طبقة ضبابية شفافة فوق الخلفية */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px); /* <-- الضباب */
+  background: rgba(14, 165, 233, 0.3); /* طبقة زرقاء خفيفة */
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+  animation: fadeInHero 1.2s ease-out;
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.hero-btn {
+  background-color: #fff;
+  color: #0ea5e9;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+/* ====== Sliding Row (Infinite Auto Slider) ====== */
+.home-slider {
+  position: relative;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  gap: 25px;
+  transition: transform 0s linear;
+  will-change: transform;
+}
+
+.slide {
+  min-width: 300px;
+  flex: 0 0 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide h2 {
+  color: #0ea5e9;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  color: #475569;
+  margin-bottom: 15px;
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* إخفاء الأزرار لأن السلايدر يتحرك تلقائياً */
+.slider-controls {
+  display: none;
+}
+
+/* ====== Animation on scroll ====== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== About Page ====== */
+.about {
+  padding: 80px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h1 {
+  color: #0ea5e9;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.about-text h2 {
+  color: #1e293b;
+  font-size: 22px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.about-text .btn {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* ====== Services Page ====== */
+.services {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services-header h1 {
+  color: #0ea5e9;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-card .icon {
+  font-size: 45px;
+  color: #0ea5e9;
+  margin-bottom: 15px;
+}
+
+.service-card h2 {
+  font-size: 22px;
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* دعم الوضع الليلي */
+body.dark .service-card {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+/* ====== Portfolio Page ====== */
+.portfolio {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.portfolio-header h1 {
+  color: #0ea5e9;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.portfolio-header p {
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 165, 233, 0.8);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.overlay .btn {
+  background-color: #fff;
+  color: #0ea5e9;
+  border-radius: 20px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.overlay .btn:hover {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+
+/* الوضع الليلي */
+body.dark .portfolio-item {
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+/* ====== Contact Page ====== */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-header h1 {
+  color: #0ea5e9;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0284c7;
+}
+
+.success-msg {
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.error-msg {
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* الوضع الليلي */
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* ====== Admin Page ====== */
+.admin {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.admin-header h1 {
+  color: #0ea5e9;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.admin-header p {
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.admin-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #0ea5e9;
+  color: #fff;
+}
+
+.admin-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.no-data {
+  color: #94a3b8;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* الوضع الليلي */
+body.dark .admin-table {
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+body.dark .admin-table th {
+  background-color: #38bdf8;
+}
+
+body.dark .admin-table tr:hover {
+  background-color: #334155;
+}
+
+/* ====== Login Page ====== */
+.login-page {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+  color: #0ea5e9;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* الوضع الليلي */
+body.dark .login-container {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+/* ====== Modern Admin Dashboard ====== */
+.admin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-header h1 {
+  color: #0ea5e9;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.admin-top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stats-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.stats-card p {
+  font-size: 28px;
+  margin: 5px 0 0;
+  font-weight: bold;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.message-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.msg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.msg-header h2 {
+  color: #0ea5e9;
+  font-size: 20px;
+  margin: 0;
+}
+
+.delete-icon {
+  color: #ef4444;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.delete-icon:hover {
+  color: #dc2626;
+}
+
+.msg-footer {
+  text-align: right;
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* الوضع الليلي */
+body.dark .message-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark .stats-card {
+  background: #38bdf8;
+  color: #1e293b;
+}
+
+body.dark .delete-icon {
+  color: #f87171;
+}
+/* ====== Toast Notification ====== */
+.toast {
+  visibility: hidden;
+  min-width: 260px;
+  margin-left: -130px;
+  background-color: #0ea5e9;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 40px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: visibility 0s, bottom 0.3s, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  bottom: 60px;
+  opacity: 1;
+}
+
+.toast.success {
+  background-color: #16a34a;
+}
+
+.toast.error {
+  background-color: #dc2626;
+}
+
+.toast.info {
+  background-color: #0ea5e9;
+}
+/* ====== Toast Notification ====== */
+.toast {
+  visibility: hidden;
+  min-width: 260px;
+  margin-left: -130px;
+  background-color: #0ea5e9;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 40px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: visibility 0s, bottom 0.3s, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.toast.show {
+  visibility: visible;
+  bottom: 60px;
+  opacity: 1;
+}
+
+.toast.success {
+  background-color: #16a34a;
+}
+
+.toast.error {
+  background-color: #dc2626;
+}
+
+.toast.info {
+  background-color: #0ea5e9;
+}
